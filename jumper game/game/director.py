@@ -1,7 +1,7 @@
 class Director:
     pass
 
-    def__init__(self):
+    def __init__(self):
         pass
 
     """start the game"""
