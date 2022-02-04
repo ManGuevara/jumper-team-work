@@ -8,7 +8,7 @@ class Word:
         self._list_words = ["one", "two", "three"]
         
         """it takes just one random word"""
-        self._word= " "
+        self._word= ""
 
         """it takes the letters from the random word and put them in underscores"""
 
@@ -22,4 +22,3 @@ class Word:
 
     def putting_undescores(self):
         """shows the hiden word in underscores"""
-        
