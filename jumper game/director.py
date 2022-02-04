@@ -4,17 +4,21 @@ class Director:
     def__init__(self):
         pass
 
-    """start the game"""
-    """takes the word from a list that is return from getting word class"""
+        """A person who directs the game"""
 
-    """analyse if the input letter is correct or not"""
+        """The responsibility of a Director is to control the sequence of play.
 
-    """it maneges the game to continue if the word is correct or not"""
+        Attributes:
+        choose_word (choose_word): takes the word from a list that is return from word class.
 
-    """if the word is completed the game is over"""
+        check_word (check_word): analyse if the input letter is correct or not.
 
-    """it receives an x from the parachute class in order to finish the game """
+        is_playing (boolean): it maneges the game to continue if the word is correct or not.
 
+        finish_game: (finish_game):if the word is completed the game is over.
+
+        parachute_gone (finish_game): it receives an x from the parachute class in order to finish the game 
+        """
 
     def start_game(self):
 
