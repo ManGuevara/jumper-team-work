@@ -4,7 +4,7 @@ from typing_extensions import Self
 class Player:
     pass
 
-    def __init__(Self):
+    def __init__(self):
         pass
 
     """it receives an input letter from {a -z}"""
