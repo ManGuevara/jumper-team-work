@@ -4,10 +4,11 @@ class Director:
     The responsibility of a Director is to control the sequence of play.
 
     Attributes:
-        hider (Hider): The game's hider.
+        word (Word): The game's word provider.
         is_playing (boolean): Whether or not to keep playing.
-        seeker (Seeker): The game's seeker.
-        terminal_service: For getting and displaying information on the terminal.
+        parachute (Parachute): Designed to print the parachute and its behavior
+        player (Player): The game's player.
+        
     """
     def __init__(self):
         pass
