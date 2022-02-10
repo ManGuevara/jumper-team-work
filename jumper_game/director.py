@@ -1,3 +1,7 @@
+from jumper_game.word import word
+from jumper_game.parachute import parachute
+from jumper_game.player import player
+
 class Director:
     """A person who directs the game. 
     
@@ -16,10 +20,13 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-
+        self.word = word()
+        #self._is_playing = True
+        self.parachute = parachute()
+        self.player = player()
 
     def start_game(self):
-       """Starts the game by running the main game loop.
+        """Starts the game by running the main game loop.
         
         Args:
             self (Director): an instance of Director.
