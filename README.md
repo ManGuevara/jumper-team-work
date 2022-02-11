@@ -16,7 +16,7 @@ project folder. Select the main module inside the jumper folder and click the "r
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- jumper game         (source code for game)
++-- jumper_game         (source code for game)
   +-- game              (specific classes)
   +-- __main__.py       (program entry point)
 +-- README.md           (general info)
