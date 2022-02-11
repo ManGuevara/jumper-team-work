@@ -1,9 +1,9 @@
 import random
 class Word:
-     """ Random word from a list of words
+    """ Random word from a list of words
     The responsibility of Word is to provide a random word from a list of words
     
-   
+
     Attributes:
         value (int): The number of spots on the side facing up.
         points (int): The number of points the die is worth.
