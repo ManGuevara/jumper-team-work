@@ -1,6 +1,6 @@
 import random
 
-__list = ["abruptly", "absurd", "abyss", "affix", "askew", "avenue", "awkward", "axiom",
+_list = ["abruptly", "absurd", "abyss", "affix", "askew", "avenue", "awkward", "axiom",
           "azure", "bagpipes", "bandwagon", "banjo", "bayou", "beekeeper", "bikini", "blitz", "boggle",
           "bookworm", "boxcar", "boxful", "buckaroo", "buffalo", "buffoon", "buxom", "buzzard", "buzzing",
           "buzzwords", "breath","brick", "bridge", "bright","broken","brother","brown","brush","bucket",
@@ -19,6 +19,6 @@ __list = ["abruptly", "absurd", "abyss", "affix", "askew", "avenue", "awkward", 
           "youthful", "yummy", "zephyr", "zigzag", "zigzagging", "zombie"]
 
 def get_words():
-    return __list
+    return _list
 
-words = random.choice(__list).upper()
+words = random.choice(_list).upper()
