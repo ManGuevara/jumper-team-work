@@ -1,16 +1,18 @@
-from jumper_game.word import word
-from jumper_game.parachute import parachute
-from jumper_game.player import player
+from jumper_game.game.word import word
+from jumper_game.game.parachute import parachute
+from jumper_game.game.player import player
+from jumper_game.game.terminal_service import TerminalService
 
 class Director:
     """A person who directs the game. 
     
     The responsibility of a Director is to control the sequence of play.
     Attributes:
-        word (Word): The game's word provider.
-        is_playing (boolean): Whether or not to keep playing.
-        parachute (Parachute): Designed to print the parachute and its behavior
-        player (Player): The game's player.
+        __word (Word): The game's word provider.
+        __is_playing (boolean): Whether or not to keep playing.
+        __terminal_service = game's Terminal Service
+        __parachute (Parachute): Designed to print the parachute and its behavior
+        __player (Player): The game's player.
         
     """
     def __init__(self):
@@ -20,10 +22,11 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        self.word = word()
+        self.__word = word()
+        self.__terminal_service = TerminalService()
         #self._is_playing = True
-        self.parachute = parachute()
-        self.player = player()
+        self.__parachute = parachute()
+        self.__player = player()
 
     def start_game(self):
         """Starts the game by running the main game loop.
