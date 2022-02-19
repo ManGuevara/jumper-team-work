@@ -24,9 +24,14 @@ class Word:
           "voodoo", "vortex", "walkway", "waltz", "wave", "wavy", "wyvern", "xylophone", "yachtsman", "yippee", "yoked",
           "youthful", "yummy", "zephyr", "zigzag", "zigzagging", "zombie"]
        
+        #selects a random word from the list and stores in random_word
         randon_word = random.choice(words_list)
-        self._word = randon_word 
+        # access the atribute _word which is protectes and asign it the random word 
+        self._word = randon_word
+        # get the length of the random word and store it in the variable word_lenght  
         word_lenght = len(self._word)
+        # access the atribute _word_length and asign it the word_lenght 
         self._word_lenght = word_lenght
+        # return the random word
         return self._word
 
