@@ -1,32 +1,33 @@
-from jumper_game.game.word import word
-from jumper_game.game.parachute import parachute
-from jumper_game.game.player import player
-from jumper_game.game.terminal_service import TerminalService
+from game.construct_para import Parachute
+from game.player import Player
+from game.word import Word
+
 
 class Director:
-    """A person who directs the game. 
-    
-    The responsibility of a Director is to control the sequence of play.
-    Attributes:
-        __word (Word): The game's word provider.
-        __is_playing (boolean): Whether or not to keep playing.
-        __terminal_service = game's Terminal Service
-        __parachute (Parachute): Designed to print the parachute and its behavior
-        __player (Player): The game's player.
-        
+    """A person who directs the game.
+
+        The responsibility of a Director is to control the sequence of play.
+
+        Attributes:
+            start_game - Starts the game calling the methods.
+            _get_inputs - calls the method to compare the guess and the word
+            _do_updates - updates the result accoring to the rules. 
+            _do_outputes - Displays the parachute and the final results. 
+
     """
-    def __init__(self):
-        pass
-        """Constructs a new Director.
+
+    def __init__ (self):
         
+        """Constructs a new Director. 
         Args:
-            self (Director): an instance of Director.
-        """
-        self.__word = word()
-        self.__terminal_service = TerminalService()
-        #self._is_playing = True
-        self.__parachute = parachute()
-        self.__player = player()
+        Director (self) An instance of director"""
+        self._parachute = Parachute()
+        self._is_playing=True
+        self.player = Player()
+        self.words = Word()
+        self.game_word=self.words.random_word()
+        self.indices=self.player.indices
+       
 
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -34,21 +35,47 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-
+        # To start we print the parachute.
+        self._parachute.display_parachute()
+        while self._is_playing:
+            self._get_inputs()
+            self._do_updates()
+            self._do_outputs()
+       
+    
     def _get_inputs(self):
-        """Gets a word from the user.
+        """ gets a letter from the user and compares to the random word. 
+        
+        Args:
+            self (Director): An instance of Director.        
+        """
+
+        self.player.compare_guess(self.game_word)
+        
+
+    def _do_updates (self):
+        """Keeps track of the parachute according to the game rules. 
+
         Args:
             self (Director): An instance of Director.
         """
+        wrong_counter=self.player.wrong_counter
+        self.indices=self.player.indices
+        self._parachute.update_parachute(wrong_counter,self.game_word,self.player._user_guess,self.indices)
+        
 
-    def _do_updates(self):
-        """Checks if the word has the letter entered by the user
+    def _do_outputs (self):
+         """Provides a hint for the player to use.
+
         Args:
             self (Director): An instance of Director.
         """
-
-    def _do_outputs(self):
-        """Provides a feedback for the player to use. The entered letter is in the word or not.
-        Args:
-            self (Director): An instance of Director.
-        """ 
+         self._parachute.display_parachute()
+         if '_' in self._parachute._word_space:
+             self._is_playing=True
+         else:
+             print(f"You won! The word was {self.game_word.upper()}")
+             self._is_playing=False
+         if self._parachute._parachute=="   x \n  /|\ \n  / \ \n \n^^^^^^^":
+             print(f"You lost! The word was {self.game_word.upper()}")
+             self._is_playing=False
