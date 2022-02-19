@@ -1,6 +1,6 @@
 import random
 
-class Words:
+class Word:
     def __init__(self):
         '''attribute word this is the word selected by randon from a list'''    
         self._word = " "
