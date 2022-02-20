@@ -1,4 +1,4 @@
-from game.construct_para import Parachute
+from game.parachute import Parachute
 from game.player import Player
 from game.word import Word
 
